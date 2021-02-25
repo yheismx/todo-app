@@ -1,8 +1,9 @@
 import React from 'react'
-import { Button, Grid, TextField, Card } from '@material-ui/core';
+import { Grid, Card } from '@material-ui/core';
 import Item from './Item';
+import ItemDone from './ItemDone';
 
-const List = () => {
+const List = ({listToDo, listDone , setListToDo, setListDone}) => {
     return (
         <div style={{marginTop:'15px'}}>
             <Grid container spacing={1}>
@@ -10,14 +11,13 @@ const List = () => {
                     <Card >
                         <h3>To do</h3>
                         <div className="list-style">
-                            <Item/>
-                            <Item/>
-                            <Item/>
-                            <Item/>
-                            <Item/>
-                            <Item/>
-                            <Item/>
-                            <Item/>
+                            <Item
+                                listToDo={listToDo}
+                                setListToDo={setListToDo}
+                                setListDone={setListDone}
+                                listDone={listDone}
+                            />
+                            
                         </div>
                     </Card>
                 </Grid>
@@ -27,14 +27,11 @@ const List = () => {
                         <h3>Done</h3>
 
                         <div className="list-style">
-                            <Item/>
-                            <Item/>
-                            <Item/>
-                            <Item/>
-                            <Item/>
-                            <Item/>
-                            <Item/>
-                            <Item/>
+                            <ItemDone
+                                listDone={listDone}
+                                
+                            />
+                           
                         </div>
                     </Card>
                 </Grid>

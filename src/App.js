@@ -16,9 +16,23 @@ function App() {
         title="To Do App"
       />
       <div className="App">
-          <Form/>
+          <Form
+            setListToDo={setListToDo}
 
-          <List/>
+            listToDo={listToDo}
+          />
+
+          <List
+            listToDo={listToDo}
+
+            listDone={listDone}
+
+            setListToDo={setListToDo}
+
+            setListDone={setListDone}
+
+
+          />
       </div>
     </div>
   );
